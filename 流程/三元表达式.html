@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+/*有三元运算符组成的式子称为三元表达式
+语法结构：条件表达式？ 表达式1： 表达式2
+执行思路：如果条件表达式结果为真，则返回 表达式1的值，如果条件表达式结果为假，则返回表达式2的值
+*/
+var num =10; 
+var result = num > 5 ? '是的': '不是';
+console.log (result);
+</script>
+
+<script>
+/*案例，数字补0
+输入数字，数字小于10则在前面补0，如09，08，数字大于10，不用补。
+用户输入0~59之间的一个数字；如果数字小于10，则在这个数字前面补0，否则不做操作；用一个变量接受这个返回值，输出，
+*/
+var time = prompt('请输入一个 0~59 之间的数字');
+var result = time < 10 ? '0' + time : time;
+alert (result);
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    
+</body>
+</html>

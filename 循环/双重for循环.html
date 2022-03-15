@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*1.双重for循环 语法结构：
+        
+        for (外层的初始化变量；外层的条件表达式；外层的操作表达式){
+            for (里层的初始化变量；里层的条件表达式；里层的操作表达式){
+                //执行语句；
+            }
+        }
+        2.里面的循环看作是外层循环的语句
+        3.外层循环循环一次，里面的循环执行全部
+        */
+        for (var i = 1; i <= 3; i++) {
+            console.log('这是外层循环的第' + i + '次')
+            for (var j = 1; j <= 3; j++) {
+                console.log('这是里层循环的第' + j + '次');
+            }
+        }
+    </script>
+
+    <script>
+        //打印五行五列星星（内层循环负责一行打印5个星星，外层循环负责打印5行）
+        var str = '';
+        for (var i = 1; i <= 5; i++) {
+            for (var j = 1; j <= 5; j++) {
+                str = str + '⭐';
+            }
+            //如果一行打印完毕5个星星就要另起一行 加\n
+            str = str + '\n';
+        }
+        console.log(str);
+    </script>
+
+    <script>
+        var rows = prompt('输入行数');
+        var cols = prompt('输入列数');
+        var str = '';
+        for (var i = 1; i <= rows; i++) {
+            for (var j = 1; j <= cols; j++) {
+                str = str + '⭐';
+            }
+            str += '\n';
+        }
+        console.log(str);
+    </script>
+
+    <script>
+        //打印倒三角形案例
+        var str = '';
+        for (var i = 1; i <= 10; i++) {
+            for (var j = i; j <= 10; j++) {
+                str = str + '⭐';
+            }
+            str += '\n';
+        }
+
+
+
+
+    </script>
+
+    <script>
+        /*九九乘法表
+        一共有9行，但是每行的个数不一样；外层的for循环控制行数i，循环9次，可以打印9行；内层的for循环控制每行公式j
+        核心算法：每一行公式的个数正好和行数一致，j<=i;
+        每行打印完毕，都需重新换一行 \n
+        */
+        var str = '';
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                //str += '⭐'
+                //1×2=2
+                str += j + '×' + i + '=' + i * j + '\t';  //\t tab键
+            }
+            str += '\n';
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

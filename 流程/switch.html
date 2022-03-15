@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*switch语句也是多分支语句，也可以实现多选一
+        语法结构
+        switch(表达式){
+            case value1：
+                执行语句1；
+                break;
+            case value2
+                执行语句2；
+                break;
+            ...
+            default:
+                执行最后的语句；
+        }
+
+         执行思路:利用表达式的值和case 后面的选项值相匹配，如果匹配上，就执行该case里面的语句；如果都没有匹配上，那就执行default里面的语句。
+        */
+        switch (2){
+            case 1:
+                console.log('这是1');
+                break;
+            case 2:
+                console.log('这是2');
+                break;
+            case 3:    
+                console.log('这是3');
+                break;
+            default:
+                console.log('没有匹配结果');  
+        }
+
+        /*switch 注意事项：1.在开发里，表达式经常写成变量；
+        2.表达式的值和case里的值相匹配的时候是全等（必须是值和数据类型一致才可以）；
+        3.break 如果当前的case里面没有break，则不会退出switch，而会继续执行下一个case。
+        */
+    </script>
+
+    <script>
+        /*案例
+            弹出prompt输入框，把值取过来保存到变量中；
+            将这个变量作为switch括号里的表达式；
+            case后面的值写几个不同的水果名字，注意要加引号，因为必须是全等匹配；
+            弹出不同价格即可。注意每个case后加上break，以便退出switch语句。
+        */
+        var fruit =prompt('输入查询的水果：');
+        switch (fruit){
+            case '苹果':
+                alert ('苹果价格3.54/斤');
+                break;
+            case '雪梨':
+                alert ('雪梨价格4.88/斤');
+                break;
+            default:
+                alert ('没有此水果');
+        } 
+    </script>
+
+
+    <script>
+        /*switch和if else if 区别：
+        1.一般情况下，两者可以相互替换；
+        2.switch...case 语句通常处理case为比较确定值的情况，而if else语句更加灵活，常用于范围判断（大于、等于某个范围）
+        3.switch语句进行条件判断后直接执行的程序的条件语句，效率更高。而if...else语句有几种条件，就得判断多少次。
+        4.当分支比较少时，if...else语句的执行效率比switch语句更高。
+        5.当分支比较多时，switch语句的执行效率比较高，而且机构更清晰。
+        */
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

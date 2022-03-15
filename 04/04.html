@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //1.检测获取字符串长度 length
+    var str ='my name is aaa';
+    console.log(str.length);
+    //字符串的拼接 +   只要有字符串与其他类型相拼接 结果就是字符串类型
+    console.log('老师'+'朋友');
+    console.log('老师'+1800);
+
+    //数字型转换为字符串 
+    //1.变量.toString（）
+    var num =18;
+    var str =num.toString();
+    console.log(str);
+    console.log(typeof str);
+    //2.利用String(变量)
+    console.log(String(num));
+    //3.利用+拼接字符串 用这个  //黑色的数字是字符型
+    console.log(num+'');
+
+    //字符型转换为数字型  蓝色的数字是数字型 
+    var age=prompt('输入您的年龄');
+    //1.parseInt(变量) 可把字符型转换为数字型 得到的是没有四舍五入的整数 
+    console.log(parseInt(age));
+
+    console.log(Number(age)); 
+    //2.parseFloat(变量)  字符型转换为数字型  得到小数 浮点数
+        console.log(parseFloat('3.14'));
+
+    //4.数算运算 - * / 隐式转换    
+    console.log('123'-2);
+
+
+
+    //计算年龄的案例：在页面上弹出输入框，输入出生年份后，能计算出年龄
+
+    /*弹出一个输入框（prompt),让用户输入
+      把用户输入的值用变量保存起来，然后用今年的年份减去变量值，结果就是现在的年龄（程序内部处理—）
+      弹出警示框（alert),把计算结果输出（输出结果） */
+    var year = prompt('请输入您的出生年份');
+    var age = 2022 - year;//year 取过来是字符串型 这里用的是减法 有隐式转换
+    alert ('您今年已经'+age+'岁了');
+
+
+    //简单相加案例
+    //先弹出第一个输入框，保存起来；再弹出第二个，保存。两值相加 赋值给新的变量（注意数据类型转换） 弹出警示框，输出结果
+    var num1=prompt('输入第一个值');
+    var num2=prompt('输入第二个值');
+    var result=parseFloat(num1)+parseInt(num2);
+    alert('您的结果是:'+result);
+    
+    /*转换为布尔型Boolean()  代表空 否定的值会被转换成false,如0，NaN,null,undefined
+    其余值会被转换成true
+    */
+    console.log(Boolean('小米'));//true
+    console.log(Boolean(''));//false
+
+
+
+
+     </script>
+
+
+
+
+
+
+</body>
+</html>

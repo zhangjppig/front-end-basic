@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var num = prompt('输入班级人数:');
+        var sum = 0;
+        var average = 0;
+        for (var i = 1; i <= num; i++){
+            var score = prompt('输入第'+ i +'个学生成绩');
+            sum =sum + parseFloat (score) ;//因为从prompt取过来的数据是字符串型的需要转换为数字型
+        }
+        average = sum / num;
+        alert ('班级总成绩是：'+ sum );
+        alert ('班级平均成绩是：'+ average);
+    </script>
+
+    <script>
+        //一行打印5个星星（采取追加字符串的方式，这样可以打印到控制台上）
+        var str ='';
+        for (var i = 1; i <=5; i++) {
+            str =str + '⭐';
+        }
+        console.log(str);
+    </script>
+
+    <script>
+        var num = prompt('输入星星个数');
+        var str = '';
+        for (var i =1; i <= num; i++){
+            str =str + '⭐'
+        }
+        console.log(str);
+
+
+    </script>
+
+</head>
+
+<body>
+    
+</body>
+</html>

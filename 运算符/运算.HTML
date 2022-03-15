@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运算符</title>
+
+    <script>
+        console.log(1 / 1);//1
+        console.log(1 - 1);//0   
+        //1.% 取余（取模）
+        console.log(5 % 2);// 1
+        console.log(3 % 5);// 3
+        //2.浮点数 算数运算里面会有问题 精准度
+        console.log(0.1 + 0.2);//0.30000000000000004
+        //3.不能直接拿浮点数相比较是否相等
+        var num = 0.1 + 0.2;
+        console.log(num == 0.3);//false
+    </script>
+
+
+
+    <script>
+        //1.反复给数字变量添加或减去1，可使用递增（++）和递减(--)，递增、递减运算符必须和变量配合使用  
+        //2.前置递增运算符 ++ 写在变量的前面
+        var age = 10;
+        ++age;//类似于age= age+1
+        console.log(age);
+        //3.先加1 后返回值 
+        var p = 10;
+        console.log(++p + 10);
+    </script>
+
+    <script>
+        /*1.前置递增和后置递增如果单独使用，效果是一样的
+        2.后置递增：先表达式返回原值，后自加1*/
+        var age = 10;
+        console.log(age++ + 10);//20,age++是10，然后再加10
+        console.log(age);//11
+
+        var a = 10;
+        a++;// a++ = 11, a=11
+        var d = a++ + 2;// a++ =11 a=12
+        console.log(d);// 13
+
+        var e = 10;
+        var f = e++ + ++e;//1.e++ =10 ,e=11  2.e=12,++e=12
+        console.log(f);// 22
+    </script>
+
+
+
+    <script>
+        console.log('3>=5');//false
+        console.log(2 <= 4);//true
+        //我们程序里的等于符号是 == 默认转换数据类型，会把字符串型的数据转换为数字型，只要求值相等就可以
+        console.log(3 == 5);//false
+        console.log(18 == 18);//true
+        console.log(18 == '18');//true
+        console.log(18 != 18);//false
+        //程序里有全等，一模一样，要求两侧的值还有数据类型完全一致才可以true
+        console.log(18 === 18);//true
+        console.log(18 === '18');//false
+    </script>
+
+
+    <script>
+        // 逻辑运算符
+        //1.逻辑与&& 两侧都为true，结果才是true。有一侧为false,结果就false
+        console.log(3 > 5 && 3 > 2);//false
+        console.log(3 < 5 && 3 > 2);//true
+        //2.逻辑或|| 两边都为false才返回false。有一侧true，结果就true 
+        console.log(3 > 5 || 3 > 2);//true
+        //3.逻辑非！取反符，用来取一个布尔值相反的值
+        console.log(!true);//false
+
+        //短路运算（逻辑中断） 表达式1 && 表达式2，如果表达式1结果为真，就返回表达式2；表达式1为假，返回表达式1
+        console.log(123 && 456);//456
+        console.log(0 && 465);//0
+        //如果有空的或者否定的为假，其余是真的。 0，‘’ null undefined NaN
+
+        //逻辑或短路运算  如果表达式1结果为真，就返回表达式1;表达式1为假，返回表达式2
+        console.log(123 || 456);// 123
+        console.log(0 || 456);// 456
+        console.log(0 || 456 || 789);// 456
+
+        var num = 0
+        console.log(123 || num++);// 123
+        console.log(num);// 0
+
+        //赋值运算符 =、+=、-=、*=、/=、%=
+        var age = 10
+        age += 5;//相当于age= age + 5
+        age *= 10;//相当于age= age * 10
+
+        /*运算符优先级
+        1.小括号 （ ）
+        2.一元运算符 ++ -- ！
+        3.算数运算符 先* / 后+ -
+        4.关系运算符 > >= < <=
+        5.相等运算符 == != === !==
+        6.逻辑运算符 先&& 后||
+        7.赋值运算符 =
+        8.逗号运算符 ，
+        一元运算符里的逻辑非优先级很高，逻辑与比逻辑或优先级高
+        */
+        console.log(4 >= 6 || '人' != '阿凡达' && !(12 * 2 == 144) && true);
+        var num = 10;
+        console.log(5 == num / 2 && (2 + 2 * num).toString() === '22');
+
+    </script>
+
+
+</head>
+
+<body>
+
+
+
+
+
+</body>
+
+</html>

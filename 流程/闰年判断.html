@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /*判断某年是否为闰年
+        算法：能被4整除且不能整除100的为闰年，或者能够被400整除的就是闰年
+        弹出prompt输入框，把值取过来保存到变量；使用if语句判断是否闰年;注意里面的且&& 还有或者||1的写法，注意判断整除的方法是取余为0.
+        */
+        var year=prompt('请输入年份');
+        if (year % 4 ==0 && year % 100 != 0 || year % 400 == 0){
+            alert('您输入的年份是闰年')
+        }else{
+            alert ('您输入的年份是平年')
+        }
+        //判断是否中奖
+        var name = prompt('请输入您的姓名：');
+        if(name == '刘德华'){
+            alert('恭喜,您中奖5元')
+        } else {alert ('抱歉，您未中奖')};
+
+
+    </script>
+
+
+
+
+</head>
+<body>
+    
+</body>
+</html>
