@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //查找索引号
+        let arr = [1, 56, 66, 2, 7, 4, 1];
+        let target = Number(prompt()); // 输入一个数字，查找它在数组里的索引号。
+        let rst = -1; // 如果没有这个数组的元素，则不循环if里面的内容，可以直接输出rst=-1
+
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === target) {
+                rst = i;
+                break;  // 如果有重复的元素，break在找到第一个元素后就可以退出循环。
+            }
+        }
+
+        alert(rst);
+    </script>
+
+</body>
+
+</html>
