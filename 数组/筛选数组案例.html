@@ -1,0 +1,46 @@
+<script>
+    // 筛选数组
+    /* 将数组[2,0,6,1,77,0,52,0,25,7]中大于等于10的元素选出来，放入新的数组 
+    1.声明一个新的数组用于存放新数据newArr；
+    2.遍历原来的旧数组，找出大于等于10的元素；
+    3.依次追加给新数组newArr;
+    */
+    var arr3 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+    var newArr = [];
+    var j = 0;
+    for (var i = 0; i < arr3.length; i++) {
+        if (arr3[i] >= 10) {
+            newArr[j] = arr3[i]; //新数组索引号应该从0开始，依次递增
+            j += 1;
+        }
+    }
+    console.log(newArr);
+
+    // 方法2
+    var arr3 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+    var newArr = [];
+    // 刚开始newArr.length就是0
+    for (var i = 0; i < arr3.length; i++) {
+        if (arr3[i] >= 10) {
+            newArr[newArr.length] = arr3[i]; //新数组索引号应该从0开始，依次递增
+        }
+    }
+    console.log(newArr);
+
+    // 将数组[2,0,6,1,77,0,52,0,25,7]中的0去掉后，形成一个不包含0的新数组
+    /* 1.需要一个新数组用于存放筛选之后的数据
+    2.遍历原来的数组，把不是0的数据添加到新数组里面（此时要注意采用数组名+索引的格式接收数据）
+    3.新数组里面的个数用length不断累加
+    */
+    var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+    var newArr1 = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] != 0) {
+            newArr1[newArr1.length] = arr[i];
+        }
+    }
+    console.log(newArr1);
+
+
+
+</script>
