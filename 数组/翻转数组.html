@@ -1,0 +1,14 @@
+<script>
+    // 将数组['red','green','blue','pink','purple']的内容反过来存放。输出['purple','pink','blue','green','red']
+
+    // 'red + purple'
+
+    const originArr = ['red', 'green', 'blue', 'pink', 'purple'];
+    const rstArr = [];
+
+    for (let i = 0; i < originArr.length; i++) {
+        rstArr[i] = originArr[i] + '+' + originArr[originArr.length - i - 1]
+    }
+
+    console.log(rstArr);
+</script>
