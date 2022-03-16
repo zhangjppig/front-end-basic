@@ -1,0 +1,32 @@
+<Script>
+    // 1.新增数组元素:修改length长度
+    var arr = ['red', '22', '绿的'];
+    console.log(arr.length);
+    arr.length = 5;// 把数组的长度修改为了5，里面应该有5个元素
+    console.log(arr);
+    console.log(arr[3]); // undefined
+    console.log(arr[4]); // undefined
+
+    //2.新增数组元素:修改数组索引号，追加数组元素
+    var arr1 = ['red', '22', '绿的'];
+    arr1[3] = 'hotdog';
+    console.log(arr1);
+    arr1[4] = 'blue';
+    console.log(arr1);
+    arr1[0] = 'yellow';// 这里是替换原来的数组元素
+    console.log(arr1);
+    arr1 = '有点意思';
+    console.log(arr1);//不要直接给数组名赋值，否则里面的数组元素都没有了
+
+    /* 新建一个数组，存放1~100个整数（1~100）
+    核心原理：使用循环来追加数组
+    1.声明一个空数组arr
+    2.循环中的计数器i可以作为数组元素存入
+    3.由于数组的索引号是从0开始的，因此计数器从0开始更合适，存入的数组元素要 +1
+     */
+    var arr2 = [];
+    for (var i = 0; i < 100; i++) {
+        arr2[i] = i + 1; //arr =i,不要直接给数组名赋值，否则以前的元素都没有了  
+    }
+    console.log(arr2);
+</Script>
