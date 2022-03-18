@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>world </h1>
+    <button>click</button>
+    <script>
+        // DOM: document object model
+        // 通过 js 操作视图
+
+        // function sayHi() {
+        //   alert('Hello');
+        // }
+
+        // let t = document.querySelector('h1');
+        // t.innerText = 123;
+
+        // t.addEventListener('click', sayHi);
+
+        // // 作业1 写一个按钮,写一个h1标题, 当点击按钮时,把 h1 标题的文字改成 Hello
+
+        // BOM: Browser object model
+        // function jump() {
+        //   window.location.href = 'https://www.baidu.com';
+        // }
+        // let b = document.querySelector('button');
+        // b.addEventListener('click', jump);
+
+        let h1Element = document.querySelector('h1');
+        let btnElement = document.querySelector('button');
+
+        btnElement.addEventListener('click', sayHello);
+
+        function sayHello() {
+            h1Element.innerText = 'Hello';
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

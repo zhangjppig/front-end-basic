@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>我是一个段落</p>
+    <button>change thing</button>
+
+    <script>
+        // 点击按钮，段落名字改成 "段落名字"
+        // 点击段落，段落名字改成 "我的名字"    
+
+        let pElement = document.querySelector('p');
+        let btnElement = document.querySelector('button');
+
+        btnElement.addEventListener('click', (a) => a + 1);
+
+        pElement.addEventListener('click', () => {
+            pElement.innerText = '我的名字';
+        })
+
+        function sum(a, b) {
+            return a + b;
+        }
+
+        let sum2 = function (a, b) {
+            return a + b;
+        }
+
+        let sum3 = (a, b) => {
+            return a + b;
+        }
+
+        let sum4 = (a, b) => a + b;
+
+        let add3 = a => a + 3;
+
+    </script>
+</body>
+
+</html>
