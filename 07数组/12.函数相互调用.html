@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 函数是可以相互调用的
+        // function fn1() {
+        //     console.log(11);
+        //     fn2();    // 在fn1函数里面调用了fn2函数
+        // }
+        // fn1();
+        // function fn2() {
+        //     console.log(22);
+        // }
+
+        function fn1() {
+            console.log(111);
+            fn2();
+            console.log('fn1');
+        }
+
+        function fn2() {
+            console.log(222);
+            console.log('fn2');
+        }
+        fn1();  // 先跑到 console.log(111)，打印出111； 然后往下走到fn2()，去调用fn2的 console.log(222)，打印出222，fn2；执行完fn2函数；再去执行console.log('fn1')，打印出fn1。
+        // 最后结果: 111，222，fn2，fn1
+
+        // 用户输入年份，输出当前年份2月份的天数（闰年的2月份29天，平年2月份28天）
+        function backDay() {
+            var year = prompt('输入年份：');
+            if (true) {
+                alert
+            }
+        }
+        backDay();
+
+        // 利用函数判断闰年 （如果是闰年就返回true，否则返回false）
+        function isRunYear(year) {
+            var flag = false;
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                flag = true;
+            }
+            return flag;
+        }
+    </script>
+</body>
+
+</html>
