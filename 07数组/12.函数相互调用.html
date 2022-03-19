@@ -36,8 +36,10 @@
         // 用户输入年份，输出当前年份2月份的天数（闰年的2月份29天，平年2月份28天）
         function backDay() {
             var year = prompt('输入年份：');
-            if (true) {
-                alert
+            if (isRunYear(year)) {   //调用函数需要加小括号
+                alert('当前年份是闰年2月份有29天');
+            } else {
+                alert('当前年份是平年2月份有28天');
             }
         }
         backDay();
