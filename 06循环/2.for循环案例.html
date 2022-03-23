@@ -10,8 +10,8 @@
 <script>
     //for循环案例
     //1.求1~100之间所有数的平均值 （需要一个sum 和的变量，还需要一个平均值 average 变量）
-    var sum;
-    let average;
+    var sum = 0;
+    let average = 0;
 
     for (let i = 1; i <= 100; i++) {
         sum += i;
@@ -26,20 +26,24 @@
         .filter(i => i % 2 === 0)
         .reduce((t, c) => t + c, 0);
 
+
+    // var even = 0;
+    // var odd = 0;
     // for (let i = 1; i <= 100; i++) {
     //     if (i % 2 === 1) {
     //         odd += i;
     //     } else {
-    //         even += i; 
+    //         even += i;
     //     }
     // }
+    // console.log(odd);
     // console.log(even);
 
     //3.求1~100之间所有能被3整除的数字之和
     var result = 0;
     for (var i = 1; i <= 100; i++) {
         if (i % 3 == 0) {
-            result = result + i;
+            result += i;
         }
     }
     console.log('1~100之间能被3整除的数字之和是:' + result);

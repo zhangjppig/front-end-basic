@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        /*switch语句也是多分支语句，也可以实现多选一
+        /* switch语句也是多分支语句，也可以实现多选一
         语法结构
-        switch(表达式){
+        switch (表达式) {
             case value1：
                 执行语句1；
                 break;
@@ -20,20 +21,20 @@
                 执行最后的语句；
         }
 
-         执行思路:利用表达式的值和case 后面的选项值相匹配，如果匹配上，就执行该case里面的语句；如果都没有匹配上，那就执行default里面的语句。
+        执行思路:利用表达式的值和case 后面的选项值相匹配，如果匹配上，就执行该case里面的语句；如果都没有匹配上，那就执行default里面的语句。
         */
-        switch (2){
+        switch (2) {
             case 1:
                 console.log('这是1');
                 break;
             case 2:
                 console.log('这是2');
                 break;
-            case 3:    
+            case 3:
                 console.log('这是3');
                 break;
             default:
-                console.log('没有匹配结果');  
+                console.log('没有匹配结果');
         }
 
         /*switch 注意事项：1.在开发里，表达式经常写成变量；
@@ -49,16 +50,16 @@
             case后面的值写几个不同的水果名字，注意要加引号，因为必须是全等匹配；
             弹出不同价格即可。注意每个case后加上break，以便退出switch语句。
         */
-        var fruit =prompt('输入查询的水果：');
-        switch (fruit){
+        var fruit = prompt('输入查询的水果：');
+        switch (fruit) {
             case '苹果':
-                alert ('苹果价格3.54/斤');
+                alert('苹果价格3.54/斤');
                 break;
             case '雪梨':
-                alert ('雪梨价格4.88/斤');
+                alert('雪梨价格4.88/斤');
                 break;
             default:
-                alert ('没有此水果');
+                alert('没有此水果');
         } 
     </script>
 
@@ -76,7 +77,9 @@
     </script>
 
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
