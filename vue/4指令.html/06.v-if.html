@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if指令</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="切换显示" @click="toggleIsShow">
+        <p v-if=" isShow">程序员</p>
+        <p v-show="isShow">程序员-v-show修饰</p>
+        <h2 v-if="temperature >=35">热死</h2>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                isShow: false,
+                temperature: 12
+            },
+            methods: {
+                toggleIsShow() {
+                    this.isShow = !this.isShow;
+                }
+            }
+        })
+
+        // v-if指令作用：根据表达式的真假切换元素的显示状态；本质是通过操纵dom元素来切换显示状态；表达式的值是true，元素存在于dom树中，为false，从dom树中移除；频繁的切换v-show，反之使用v-if，前者的切换消耗小。
+    </script>
+</body>
+
+</html>
