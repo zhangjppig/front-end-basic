@@ -1434,7 +1434,7 @@ fun('大家好');
         }
         fn();
 ```
-### 7.9 对象
+## 8 对象
 对象：在js中对象是一组无序的相关属性和方法的集合，所有事物都是对象，例如字符串、数值、数组、函数等。
 
 * 对象由属性和方法组成的
@@ -1508,7 +1508,7 @@ var obj = {
         }
 ```
 
-构造函数的语法格式
+(1) 构造函数的语法格式
 ```js
 function 构造函数名() {
     this.属性 = 值；
@@ -1544,5 +1544,203 @@ zxy.sing('李香兰');
 * 调用构造函数必须使用new
 * 只要new Star() 调用函数就创建了一个对象
 * 属性和方法前面必须要加 this
+
+    (2) 构造函数和对象
+   
+  * 1.构造函数，泛指的某一大类，如明星
+```js
+function Star(uname, age, sex) {
+    this.name = uname;
+    this.age = age;
+    this.sex = sex;
+    this.sing = function (sang) {
+        console.log(sang);
+    }
+```
+  * 2.对象，特指，是一个具体的事物
+```js
+var ldh = new Star('刘德华', 12, '男'); // 调用函数返回的是一个对象
+console.log(ldh);
+```
+  * 3.利用构造函数创建对象的过程称为对象的实例化 
+
+
+3. new关键字
+* new关键字执行过程
+  * (1) new构造函数就可以在内存中创建了一个空的对象
+  * (2) this就会指向刚才创建的空对象
+  * (3) 执行构造函数里面的代码，给这个空对象添加属性和方法
+  * (4) 返回这个对象（构造函数里面不需要return）
+```js
+        function Star(uname, age, sex) {
+            this.name = uname;
+            this.age = age;
+            this.sex = sex;
+            this.sing = function (sang) {
+                console.log(sang);
+            }
+        }
+        var ldh = new Star('刘德华', 12, '男');
+```
+
+
+4. 遍历对象
+   
+for in 遍历对象,用于对对象的属性进行循环操作
+```js
+for （变量 in 对象）{
+
+}
+```
+>for in里面的变量经常写 k,或者key
+
+```js
+var obj = { 
+    name:'pink',
+    age:12,
+    sex:'男',
+}
+
+for (var k in obj) {
+    console.log(k); // k 变量输出，得到的是属性名
+    console.log(obj[k]); // obj[k]得到的的属性值
+}
+```
+
+### 8.2 内置对象
+* 查文档 MDN。学习对象中的方法
+    * 查阅该方法的功能
+    * 查看里面参数的意义和类型
+    * 查看返回值的意义和类型
+    * 通过demo进行测试
+  
+#### Math 
+1. math数学对象，不是一个构造函数，所以不需要new来调用，而是直接使用里面的属性和方法即可
+```js
+console.log(Math.PI); // 一个属性，圆周率
+
+console.log(Math.max（1，22，55））;  // 55
+
+console.log(Math.max(1,3,'pink')); // NaN
+
+console.log(Math.max()); // -Infinity
+```
+
+* 利用对象封装自己的数学对象，里面有PI,最大值和最小值
+```js
+var myMath = {
+    PI: 3.141592653,
+    max: function(){
+        var max = arguments[0];
+        for (var i = 1; i < arguments.length; i++){
+            if(arguments[i] > max){
+                 max = arguments[i];
+            }               
+        }
+        return max;
+},
+
+    min: function(){
+        var min = arguments[0];
+        for (var i = 1; i < arguments.length; i++){
+            if (arguments[i] < min ) {
+                min = arguments[i];
+            }
+        }
+        return min;
+    }
+}
+console.log(myMath.PI);
+console.log(myMath.max(1,5,7));
+console.log(myMath.min(1,5,7));
+```
+
+1. Math绝对值 Math.abs( );
+```js
+console.log(Math.abs(-1)); // 1
+console.log(Math.abs('-1')); // 1，隐式转换，会把字符串型-1转换为数字型
+console.log(Math.abs('pig')); // NaN
+```
+2. Math三个取整方法
+
+   * （1） Math.floor( ) 向下取整，往最小了取值
+   * （2） Math.ceil( ) 向上取整，往最大了取值
+   * （3） Math.around( );四舍五入，除了 .5 特殊，往大取值
+```js
+console.log( Math.floor(1.3)); // 1
+
+console.log( Math.ceil(1.3)); // 2
+
+console.log( Math.around(1.5)); // 2
+
+console.log( Math.around(-1.5)); // -1
+```
+
+3. Math随机数方法 Math.random( )
+   
+     * random( ) 返回一个 0 =< x < 1 随机的小数,这个方法里面不跟函数
+
+* 想要得到两个数之间的随机整数，并且包含这2给整数
+  
+* Math.floor(Math.random( ) * (max - min + 1)) + min 
+```js 
+function getRandom(min, max) {
+    return Math.floor(Math.random( ) * (max - min + 1)) + min;
+}
+console.log( getRandom(1,10));
+```
+
+* 随机点名
+```js
+var arr = ['掌门','大宇','大爷'];
+console.log(arr[getRandom(0, arr.length-1)]);
+```
+
+* 猜数字
+    * 1.随机生成一个1~10的整数，需要用到Math.random()方法
+    * 2.需要猜到正确为止，所以要一直循环
+    * 3.while 循环更简单
+    * 4.核心算法：使用if else if 多分支语句来判断大于，等于，小于
+  
+```js
+   function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var random = getRandom(1, 10);
+        while (true) {
+            var num = prompt('输入一个1~10的整数');
+            if (num > random) {
+                alert('猜大了');
+            } else if (num < random) {
+                alert('猜小了');
+            } else {
+                alert('猜对了');
+                break;
+            }
+        }
+```
+
+#### 日期对象
+Date()日期对象 是一个构造函数，必须使用new来调用创建我们的日期对象
+```js
+        var arr = new Array(); // 创建一个数组对象
+        var obj = new Object(); // 创建一个对象实例
+
+        // 1.使用Date没有参数，返回当前系统的当前时间
+        var date = new Date();
+        console.log(date);
+
+        // 2.参数常用写法字符串型'2020-2-2 12：12：12'(常用字符串型) 或者数字型2020，02，02
+        var date1 = new Date('2020-2-2 12:12:12');
+        console.log(date1);
+
+        var date2 = new Date(2020, 2, 2);  //返回的是3月，不是2月
+        console.log(date2);
+
+
+
+
+
+
 
 
