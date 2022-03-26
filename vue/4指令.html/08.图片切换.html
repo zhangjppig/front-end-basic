@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main-pic {
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mask">
+        <div class="center">
+            <h2 class="title">
+                这是一个图片切换
+            </h2>
+
+            <img id="main-pic" :src="imgArr[idx]" alt="">
+
+            <button @click="toPrev">上一张</button>
+            <button @click="toNext">下一张</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: "#mask",
+            data: {
+                imgArr: [
+                    "../img/1.jpg",
+                    "../img/2.jpg",
+                    "../img/3.jpg",
+                    "../img/4.jpg",
+                    "../img/5.jpg",
+                ],
+                idx: 2,
+            },
+            methods: {
+                toPrev() {
+                    this.idx = this.idx - 1;
+                },
+                toNext() {
+                    this.idx += 1;
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
