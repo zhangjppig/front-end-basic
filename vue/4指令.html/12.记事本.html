@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记事本</title>
+</head>
+
+<body>
+    <!-- 主体区域 -->
+    <section id="todoapp">
+        <!-- 输入框 -->
+        <header class="header">
+            <h1>記事本</h1>
+            <input v-model="inputValue" @keyup.enter="add" autofocus="autofocus" autocomplete="off" placeholder="請輸入任務"
+                class="new-todo" />
+        </header>
+
+        <!-- 列表區域 -->
+        <section class="main">
+            <ul class="todo-list">
+                <li class="todo" v-for="(item,index) in list">
+                    <div class="view">
+                        <span class="index">{{ index + 1}}. </span>
+                        <label>{{ item }}</label>
+                        <button class="destroy" @click="remove(index)"> </button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 统计和清空 -->
+        <footer class="footer">
+            <span class="todo-count" v-show="list.length!=0">
+                <strong>
+                    {{list.length }}
+                </strong>
+                item left
+            </span>
+
+            <button v-show="list.length!=0" class="clear-completed" @click="clear">
+                clear
+            </button>
+        </footer>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#todoapp",
+            data: {
+                list: ['写字', '吃饭', '睡觉'],
+                inputValue: "输入代码"
+            },
+            methods: {
+                add() {
+                    this.list.push(this.inputValue);
+                },
+                remove(index) {
+                    this.list.splice(index, 1);
+                },
+                clear() {
+                    this.list = [];
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
