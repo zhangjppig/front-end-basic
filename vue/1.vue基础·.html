@@ -9,15 +9,17 @@
 </head>
 
 <body>
+    <!-- 2.html结构 -->
     <div id="app">
         {{ message }}
     </div>
     <div id="what">
         {{ message }}
     </div>
-    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <!-- 1.开发环境版本，包含了有帮助的命令行警告 -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
+        // 3.创建Vue实例
         var app = new Vue({
             el: "#app",
             data: {

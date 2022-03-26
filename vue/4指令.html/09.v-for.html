@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .member-name {
+            font-weight: bold;
+        }
+
+        .product-info {
+            margin-left: 20px;
+        }
+
+        .product-price {
+            color: red;
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-for="(item, k) in arr">{{k + ': ' + item}}</h1>
+
+        <p v-for="(vegetable, index) in vegetables">{{ vegetable.name }}</p>
+
+
+        <hr>
+
+        <p v-for="( member, index) in members">{{ member.name }} {{ member.address.stress }}</p>
+
+        <hr>
+
+        <div v-for="member in members">
+            <p class="member-name">{{member.name}}</p>
+            <div v-for="product in member.cart">
+                <p class="product-info">
+                    {{product.qty}}
+                    <span v-if="!product.qty">1</span>
+                    x
+                    {{product.productName}}:
+                    <span class="product-price">
+                        ${{product.price}}
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                arr: ['北京', '上海', '天津'],
+
+                vegetables: [
+                    { name: "西兰花" },
+                    { name: "兰花" }
+                ],
+
+
+                members: [
+                    {
+                        name: 'Tom',
+                        address: { stress: '1st st' },
+                        cart: [
+                            {
+                                productName: 'Cola',
+                                price: 3,
+                                qty: 10,
+                            },
+                            { productName: 'Rice', price: 50 },
+                        ]
+                    },
+                    {
+                        name: 'Amy',
+                        address: { stress: '33ed st' },
+                        cart: [
+                            { productName: 'Cola', price: 3 },
+                            { productName: 'Water', price: 2 },
+                        ]
+                    },
+                ]
+            }
+        })
+    </script>
+    <!-- v-for指令作用：根据数据生成列表结构；数组经常和v-for结合使用；语法是（item，index）in数据； item，index可以结合其他指令一起使用；数组长度的更新会同步到页面上，是响应式的-->
+</body>
+
+</html>
