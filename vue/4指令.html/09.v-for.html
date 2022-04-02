@@ -41,8 +41,7 @@
                 <p class="product-info">
                     {{product.qty}}
                     <span v-if="!product.qty">1</span>
-                    x
-                    {{product.productName}}:
+                    x {{product.productName}}:
                     <span class="product-price">
                         ${{product.price}}
                     </span>
@@ -69,11 +68,7 @@
                         name: 'Tom',
                         address: { stress: '1st st' },
                         cart: [
-                            {
-                                productName: 'Cola',
-                                price: 3,
-                                qty: 10,
-                            },
+                            { productName: 'Cola', price: 3, qty: 10 },
                             { productName: 'Rice', price: 50 },
                         ]
                     },
